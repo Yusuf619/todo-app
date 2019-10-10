@@ -63,17 +63,24 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
+
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="far fa-user"></i></a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <h1> <i class="far fa-user"></i> Signed in as <b class="username"><?php  echo htmlspecialchars($_SESSION["username"]); ?></b></h1>
+       
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+        <h1> Signed in as <b class="username"><?php  echo htmlspecialchars($_SESSION["username"]); ?></b></h1>
         <hr>
           <a class="dropdown-item" href="reset-password.php">Reset Your Password</a>
-          <a class="dropdown-item" href="logout.php">Logout Of your Account</a>
+          <a class="dropdown-item" href="logout.php">Logout of your Account</a>
         </div>
       </li>
+ 
+
     </ul>
   </div>
 </nav>
