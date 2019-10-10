@@ -1,0 +1,20 @@
+
+
+
+.wrapper{
+  
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+.wrapper h2{
+    margin-top: 200px;
+}
+
+.btn-primary{
+    background-color: darkblue;
+    border: none;
+    color: white;
+}
