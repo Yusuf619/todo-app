@@ -15,7 +15,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $errors = ""; 
 
 // connecting to the db
-    $db = mysqli_connect('localhost', 'root', 'root', 'todo-app');
+    $db = mysqli_connect('167.71.74.228', 'yusuf', 'sterns94Sex87murre', 'todo-app');
 
     if (isset($_POST['submit'])) {
         $task = $_POST['task'];
