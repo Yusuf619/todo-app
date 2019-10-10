@@ -1,9 +1,9 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
+define('DB_SERVER', '167.71.74.228');
+define('DB_USERNAME', 'yusuf');
+define('DB_PASSWORD', 'sterns94Sex87murre');
 define('DB_NAME', 'todo-app');
  
 /* Attempt to connect to MySQL database */
