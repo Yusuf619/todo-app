@@ -68,6 +68,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <h1> <i class="far fa-user"></i> Signed in as <b class="username"><?php  echo htmlspecialchars($_SESSION["username"]); ?></b></h1>
+        <hr>
           <a class="dropdown-item" href="reset-password.php">Reset Your Password</a>
           <a class="dropdown-item" href="logout.php">Logout Of your Account</a>
         </div>
@@ -77,11 +79,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </nav>
     </div>
 
-    <div class="page-header">
-        <h1>Hi, <b class="username"><?php  echo htmlspecialchars($_SESSION["username"]); ?></b>. Start adding your tasks!</h1>
+    <!-- <div class="page-header">
+        <h1>Hi, <b class="username"><?php  echo htmlspecialchars($_SESSION["username"]); ?></b></h1>
     
   
     </div>
+     -->
+
+
 
 
 <div>
