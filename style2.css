@@ -1,4 +1,7 @@
-
+body{
+    background-color: lightblue;
+    font-family: 'Montserrat', sans-serif !important;
+}
 
 
 .wrapper{
@@ -6,6 +9,7 @@
     width: 350px;
     text-align: center;
     margin: 0 auto;
+  
     
 }
 
