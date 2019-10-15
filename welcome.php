@@ -1,3 +1,4 @@
+<!-- PHP START -->
 <?php
 // Initialize the session
 session_start();
@@ -15,7 +16,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     $errors = ""; 
 
 // connecting to the db
-    $db = mysqli_connect('167.71.74.228', 'yusuf', 'sterns94Sex87murre', 'todo-app');
+    // $db = mysqli_connect('167.71.74.228', 'yusuf', 'sterns94Sex87murre', 'todo-app');
+    $db = mysqli_connect('localhost', 'root', 'root', 'todo-app');
 
     if (isset($_POST['submit'])) {
         $task = $_POST['task'];
@@ -35,6 +37,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     $tasks = mysqli_query($db, "SELECT * FROM tasks");
 ?>
+<!-- PHP END -->
 
 
 
@@ -98,8 +101,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <div>
 
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div>
+</div>
 
 
 
@@ -126,17 +130,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <td><?php echo $i; ?></td>
                 <td class="task"><?php echo $row['task']; ?></td>
                 <td class="delete">
-                    <a href="welcome.php?del_task=<?php echo $row['id']; ?>"> x</a>
+                    <a  href="welcome.php?del_task=<?php  echo $row['id']; ?>"> x</a>
                 </td>
             </tr> 
             <?php $i++; } ?>
         </tbody>
     </table>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- AJAX STRIKETHROUGH START -->
+    <script>
+$(function(){
+  var $curParent, Content;
+  $(document).delegate("td","click", function(){
+    if($(this).closest("s").length) {
+      Content = $(this).parent("s").html();
+      $curParent = $(this).closest("s");
+      $(Content).insertAfter($curParent);
+      $(this).closest("s").remove();
+    }
+    else {
+      $(this).wrapAll("<s />");
+    }
+  });
+});
+</script>
+<!-- AJAX STRIKETHROUGH END -->
+
+<!-- SCRIPT TAGS START -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<!-- SCRIPT TAGS END -->
 
    
 
